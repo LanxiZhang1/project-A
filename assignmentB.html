@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <title>Bootstrap Website Example</title> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    .content-section {
+      display: none; /* Initially hide all sections */
+    }
+    #descriptions {
+      display: block; /* Only show the first section initially */
+    }
+    .statistics {
+        font-family: Arial, sans-serif; /* Keeps the font consistent */
+        margin: 20px; /* Adds some space around the container */
+        padding: 20px; /* Adds space inside the container */
+    }
+    .stat-item {
+        margin-bottom: 10px; /* Adds space below each statistic */
+    }
+    .stat-label {
+        font-weight: bold; /* Makes the label bold */
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Determinants of High Ratings in Popular Movies</h1>
+  <p>group 13</p> 
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Outline</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#descriptions" onclick="showSection('descriptions')">Descriptions</a></li>
+        <li><a href="#data-collection" onclick="showSection('data-collection')">Data Collection</a></li>
+        <li><a href="#network-analysis" onclick="showSection('network-analysis')">Network Analysis</a></li>
+        <li><a href="#textual-analysis" onclick="showSection('textual-analysis')">Textual Analysis</a></li>
+        <li><a href="#discussion" onclick="showSection('discussion')">Discussion & Conclusion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="descriptions" class="content-section">
+  <h1><strong>Descriptions</strong></h1>
+  <p>Content for Descriptions.</p>
+</div>
+
+<div id="data-collection" class="content-section">
+  <div class="container">
+    <h1><strong>Data Collection</strong></h1>
+    <div class="row">
+      <div class = "col-md-9">
+        <h3>Top 200 popular movies</h3>
+        <p>200 rows, 12 columns</p>
+        <img src="top200.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 750px;height: 280px;">
+        <h5><strong>Definition of popularity of movie</strong></h5>
+        <ul> 
+            <li>Number of votes for the day</li>
+            <li>Number of views for the day</li>
+            <li>Number of users who marked it as a "favourite" for the day</li>
+            <li>Number of users who added it to their "watchlist" for the day</li>
+            <li>Release date</li>
+            <li>Number of total votes</li>
+            <li>Previous days score</li>
+        </ul>
+        <h3>Actors from top 200 movies</h3>
+        <p>9094 rows, 4 columns</p>
+        <img src="actor200.png" alt="Actors from top 200 movies" class="img-responsive" style = "width: 350px;height: 150px;">
+        <h5><strong>Definition of popularity of actor</strong></h5>
+        <ul> 
+            <li>Number of views for the day</li>
+            <li>Previous days score</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <p>The dataset was collected by <a href="https://developer.themoviedb.org/docs/getting-started">TMDB</a> api, with rate limiting of 40 requests/sec, and saved as the excel file to maintain the formatting.</p>
+        <a href="https://drive.google.com/uc?export=download&id=1-xZcgUq0-N_32_tZuyhaKjKUCy55CqNw" download="collected data.zip" class="btn btn-primary">
+          Download Dataset
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="network-analysis" class="content-section">
+  <div class="container">
+    <h1><strong>Network Analysis</strong></h1>
+    <div class="row">
+      <div class = "col-md-6">
+        <img src="network.png" alt="Network" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <p>The network is created by presenting actors as nodes and connections between the actors who have appeared in the same movie as edges.</p>
+        <p>There are total number of 6649 nodes and 222312 edges in the network.</p>
+        <div class="statistics">
+          <div class="stat-item">
+              <span class="stat-label">Average of degree:</span> 66.871
+          </div>
+          <div class="stat-item">
+              <span class="stat-label">Median of degree:</span> 61.0
+          </div>
+          <div class="stat-item">
+              <span class="stat-label">Minimum of degree:</span> 2
+          </div>
+          <div class="stat-item">
+              <span class="stat-label">Maximum of degree:</span> 432
+          </div>
+        </div>
+        <h5><strong>Top 5  influential actors</strong></h5>
+        <ul> 
+            <li>Matt Damon</li>
+            <li>Samuel L. Jackson</li>
+            <li>Dave Bautista</li>
+            <li>Alexandra Shipp</li>
+            <li>Josh Brolin</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="textual-analysis" class="content-section">
+  <h1>Textual Analysis</h1>
+  <p>Content for Textual Analysis.</p>
+</div>
+<div id="discussion" class="content-section">
+  <h1>Discussion and Conclusion</h1>
+  <p>Content for Discussion and Conclusion.</p>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    $('.content-section').hide();
+
+    // Show the requested section
+    $('#' + sectionId).show();
+
+    // Update active class on navbar
+    $('.nav li').removeClass('active');
+    $('.nav a[href="#' + sectionId + '"]').parent().addClass('active');
+  }
+
+  // Update active class based on scroll position
+  $(window).on('scroll', function () {
+    var scrollPos = $(document).scrollTop();
+    $('nav a').each(function () {
+      var currLink = $(this);
+      var refElement = $(currLink.attr('href'));
+      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        $('nav ul li').removeClass('active');
+        currLink.parent().addClass('active');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
