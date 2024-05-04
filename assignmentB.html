@@ -32,6 +32,32 @@
     .stat-label {
         font-weight: bold; /* Makes the label bold */
     }
+    table {
+            width: 100%; /* Full width of the container */
+            border-collapse: collapse; /* Collapses borders between cells into a single border */
+            text-align: center; /* Center-aligns text within cells */
+        }
+
+        /* Styling for table headers and cells */
+        th, td {
+            padding: 8px; /* Adds padding inside cells */
+            border-left: 1px solid black; /* Adds a border to the left of each cell */
+            border-right: 1px solid black; /* Adds a border to the right of each cell */
+        }
+
+        /* Remove left border for the first cell and right border for the last cell */
+        th:first-child, td:first-child {
+            border-left: none; /* Removes the left border for the first cell in each row */
+        }
+
+        th:last-child, td:last-child {
+            border-right: none; /* Removes the right border for the last cell in each row */
+        }
+
+        /* Optional: Adding a header background */
+        th {
+            background-color: #f2f2f2; /* Light gray background for headers */
+        }
   </style>
 </head>
 <body>
@@ -55,6 +81,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#descriptions" onclick="showSection('descriptions')">Descriptions</a></li>
         <li><a href="#data-collection" onclick="showSection('data-collection')">Data Collection</a></li>
+        <li><a href="#basic-analysis" onclick="showSection('basic-analysis')">Basic Analysis</a></li>
         <li><a href="#network-analysis" onclick="showSection('network-analysis')">Network Analysis</a></li>
         <li><a href="#textual-analysis" onclick="showSection('textual-analysis')">Textual Analysis</a></li>
         <li><a href="#discussion" onclick="showSection('discussion')">Discussion & Conclusion</a></li>
@@ -65,8 +92,16 @@
 
 
 <div id="descriptions" class="content-section">
-  <h1><strong>Descriptions</strong></h1>
-  <p>Content for Descriptions.</p>
+  <div class="container">
+    <h1><strong>Descriptions</strong></h1>
+    <div class="row">
+      <div class = "col-md-9">
+        <p>Content for Descriptions.<br/>
+        balabala...</p>
+        <p>In this project, we are going to analysis what factors that affect the ratings of movies with high popularity and determine what contributes popular to the high ratings.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="data-collection" class="content-section">
@@ -74,7 +109,8 @@
     <h1><strong>Data Collection</strong></h1>
     <div class="row">
       <div class = "col-md-9">
-        <h3>Top 200 popular movies</h3>
+        <p>To analysis the factors of the rate in high poularity movies, we collected the top 200 popular movies with the vote_count not equal to 0, ensuring it has a rating.</p>
+        <h3><strong>Top 200 popular movies</strong></h3>
         <p>200 rows, 12 columns</p>
         <img src="top200.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 750px;height: 280px;">
         <h5><strong>Definition of popularity of movie</strong></h5>
@@ -87,8 +123,8 @@
             <li>Number of total votes</li>
             <li>Previous days score</li>
         </ul>
-        <h3>Actors from top 200 movies</h3>
-        <p>9094 rows, 4 columns</p>
+        <h3><strong>Actors from top 200 movies</strong></h3>
+        <p>9023 rows, 4 columns</p>
         <img src="actor200.png" alt="Actors from top 200 movies" class="img-responsive" style = "width: 350px;height: 150px;">
         <h5><strong>Definition of popularity of actor</strong></h5>
         <ul> 
@@ -106,6 +142,23 @@
   </div>
 </div>
 
+<div id="basic-analysis" class="content-section">
+  <div class="container">
+    <h1><strong>Basic Analysis</strong></h1>
+    <div class="row">
+      <div class = "col-md-8">
+        <img src="rate.png" alt="Ratings" class="img-responsive" style = "width: 700px;height: 400px;">
+      </div>
+      <div class = "col-md-4">
+        <p>According the histogram of the ratings of top 200 movies, a roughly normal distribution slightly skewed towards higher ratings.
+          The peak is around rating range between 7 and 8, suggesting the majority of popular movies have average ratings within the interval.
+          However, there are few moviews has very low ratings below 5.
+        </p>
+        <p>Then we will do the network and textual analysis to further examine the data.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="network-analysis" class="content-section">
   <div class="container">
@@ -115,31 +168,101 @@
         <img src="network.png" alt="Network" class="img-responsive">
       </div>
       <div class="col-md-6">
-        <p>The network is created by presenting actors as nodes and connections between the actors who have appeared in the same movie as edges.</p>
-        <p>There are total number of 6649 nodes and 222312 edges in the network.</p>
+        <p>The network is created by presenting actors as nodes and connections between the actors who have appeared in the same movie as edges. There are total number of 8058 nodes and 301920 edges in the network.</p>
         <div class="statistics">
           <div class="stat-item">
-              <span class="stat-label">Average of degree:</span> 66.871
+              <span class="stat-label">Density:</span> 0.0093
           </div>
           <div class="stat-item">
-              <span class="stat-label">Median of degree:</span> 61.0
+              <span class="stat-label">Number of connected components:</span> 23
+          </div>
+          <div class="stat-item">
+              <span class="stat-label">Number of isolated nodes:</span> 0
+          </div>
+        </div>
+        <p>The network has relatively low density, suggesting that the network is not totally interconnected.
+          The number of connected components and the isolated nodes indicates that there are many actors from 23 movies have not appeared in other movies and all the movies have more than one actors. 
+        </p> 
+        <div class="statistics">
+          <div class="stat-item">
+              <span class="stat-label">Average of degree:</span> 74.937
+          </div>
+          <div class="stat-item">
+              <span class="stat-label">Median of degree:</span> 62.0
           </div>
           <div class="stat-item">
               <span class="stat-label">Minimum of degree:</span> 2
           </div>
           <div class="stat-item">
-              <span class="stat-label">Maximum of degree:</span> 432
+              <span class="stat-label">Maximum of degree:</span> 455
           </div>
         </div>
-        <h5><strong>Top 5  influential actors</strong></h5>
-        <ul> 
-            <li>Matt Damon</li>
-            <li>Samuel L. Jackson</li>
-            <li>Dave Bautista</li>
-            <li>Alexandra Shipp</li>
-            <li>Josh Brolin</li>
-        </ul>
+        <p>Each actor has collaborated with around 75 other actors on average, showing a high level of connectivity among actors.
+          And the significant difference between median and mean value suggests that there has the actors who has better influential than others.
+          The Maximum degree indicates the presence of actors who are involved in many movies, which could reveal the insights of the relatinship between actors and movie ratings.
+        </p>
       </div>
+      <h3><strong>Top 5  influential actors</strong></h3>
+        <table>
+          <thead>
+              <tr>
+                  <th>actor name</th>
+                  <th>total movies</th>
+                  <th>average rating</th>
+                  <th>max rating</th>
+                  <th>min rating</th>
+                  <th>popularity</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Brad Pitt</td>
+                  <td>5</td>
+                  <td>7.702</td>
+                  <td>8.441</td>
+                  <td>6.800</td>
+                  <td>64.384</td>
+              </tr>
+              <tr>
+                  <td>Margot Robbie</td>
+                  <td>3</td>
+                  <td>7.332</td>
+                  <td>7.526</td>
+                  <td>7.070</td>
+                  <td>70.192</td>
+              </tr>
+              <tr>
+                <td>Samuel L. Jackson</td>
+                <td>10</td>
+                <td>6.866</td>
+                <td>8.489</td>
+                <td>4.821</td>
+                <td>59.057</td>
+              </tr>
+              <tr>
+                <td>Matt Damon</td>
+                <td>6</td>
+                <td>7.515</td>
+                <td>8.434</td>
+                <td>5.300</td>
+                <td>81.126</td>
+              </tr>
+              <tr>
+                <td>Robert Downey Jr.</td>
+                  <td>6</td>
+                  <td>7.619</td>
+                  <td>8.254</td>
+                  <td>6.840</td>
+                  <td>75.304</td>
+              </tr>
+          </tbody>
+      </table>
+      <p>
+        Excluding Samuel L. Jackson, the works of other actors have an average rating around 7.5, which is relatively high.
+
+      </p>
+      <p>Overall, there does appear to be some relationship between the number of movies actors appear in and their average ratings, with a potential trade-off between quantity and quality
+        However, popularity does not necessarily correlate with higher average ratings.</p>
     </div>
   </div>
 </div>
@@ -154,7 +277,7 @@
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Footer</p>
+  <p>Computational Social Science 2024</p>
 </div>
 
 <script>
