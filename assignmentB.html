@@ -96,8 +96,9 @@
     <h1><strong>Descriptions</strong></h1>
     <div class="row">
       <div class = "col-md-9">
-        <p>Content for Descriptions.<br/>
-        balabala...</p>
+        <p>The popular movies attract a large number of audiences while the high rating movies are more likely to become a classic, enjoyed repeatedly by countless people.
+          Therefore, a successful movie is both famous and well reviewed. So what makes popular movies receive high ratings?
+        </p>
         <p>In this project, we are going to analysis what factors that affect the ratings of movies with high popularity and determine what contributes popular to the high ratings.</p>
       </div>
     </div>
@@ -112,7 +113,21 @@
         <p>To analysis the factors of the rate in high poularity movies, we collected the top 200 popular movies with the vote_count not equal to 0, ensuring it has a rating.</p>
         <h3><strong>Top 200 popular movies</strong></h3>
         <p>200 rows, 12 columns</p>
-        <img src="top200.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 750px;height: 280px;">
+        <h4><strong>Attributes</strong></h4>
+        <ul> 
+          <li>adult</li>
+          <li>genre_ids</li>
+          <li>id</li>
+          <li>original_language</li>
+          <li>overview</li>
+          <li>popularity</li>
+          <li>release_date</li>
+          <li>title</li>
+          <li>video</li>
+          <li>vote_average</li>
+          <li>vote_count</li>
+      </ul>
+        <!-- <img src="top200.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 750px;height: 280px;"> -->
         <h5><strong>Definition of popularity of movie</strong></h5>
         <ul> 
             <li>Number of votes for the day</li>
@@ -125,7 +140,13 @@
         </ul>
         <h3><strong>Actors from top 200 movies</strong></h3>
         <p>9023 rows, 4 columns</p>
-        <img src="actor200.png" alt="Actors from top 200 movies" class="img-responsive" style = "width: 350px;height: 150px;">
+        <h4><strong>Attributes</strong></h4>
+        <ul> 
+          <li>movie_id</li>
+          <li>actor_name</li>
+          <li>actor_id</li>
+      </ul>
+        <!-- <img src="actor200.png" alt="Actors from top 200 movies" class="img-responsive" style = "width: 350px;height: 150px;"> -->
         <h5><strong>Definition of popularity of actor</strong></h5>
         <ul> 
             <li>Number of views for the day</li>
@@ -150,7 +171,8 @@
     <h1><strong>Basic Analysis</strong></h1>
     <div class="row">
       <div class = "col-md-8">
-        <img src="rate.png" alt="Ratings" class="img-responsive" style = "width: 700px;height: 400px;">
+        <!-- <img src="rate.png" alt="Ratings" class="img-responsive" style = "width: 700px;height: 400px;"> -->
+        <img src="https://github.com/LanxiZhang1/project-A/blob/main/rate.png?raw=true" alt="Ratings" class="img-responsive" style = "width: 700px;height: 400px;">
       </div>
       <div class = "col-md-4">
         <p>According the histogram of the ratings of top 200 movies, a roughly normal distribution slightly skewed towards higher ratings.
@@ -168,7 +190,9 @@
     <h1><strong>Network Analysis</strong></h1>
     <div class="row">
       <div class = "col-md-6">
-        <img src="network.png" alt="Network" class="img-responsive">
+        <!-- <img src="network.png" alt="Network" class="img-responsive"> -->
+        <img src="
+        https://github.com/LanxiZhang1/project-A/blob/main/network.png?raw=true" alt="Network" class="img-responsive">
       </div>
       <div class="col-md-6">
         <p>The network is created by presenting actors as nodes and connections between the actors who have appeared in the same movie as edges. There are total number of 8058 nodes and 301920 edges in the network.</p>
@@ -292,14 +316,23 @@
     The bottom bracket is a bit lacking, as the words are too specific and niche, and do not provide much meaning towards the concepts of the movies. The WordClouds however, were arguably the best at answering our research question.  
   </p>
 </div>
+
 <div id="discussion" class="content-section">
-  <h1>Discussion and Conclusion</h1>
-  <p>Content for Discussion and Conclusion.</p>
+  <div class="container">
+    <h1><strong>Limitations</strong></h1>
+    <p>Although the network analysis and textual analysis provide valuable insights for the topic,
+      the conclusions are somewhat limited by many factors. Considering the network, 
+      the actor who has a high degree may not only due to they participation in many movies, but also could be influenced by thoese movies featuring a large casts.
+      While the textual analysis was limited by the shot length of the overviews and the small quantity of samples reviewed, which may affect the generalizability of the findings which may
+      generate errors in the results.
+      Therefore, more samples and details might be required to obatin more accurate results in further research.
+    </p>
+  </div>
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>Computational Social Science 2024</p>
-  <a href=" ">Github repository</a>
+  <a href="https://github.com/LanxiZhang1/project-A">Github repository</a>
 </div>
 
 <script>
