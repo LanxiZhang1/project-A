@@ -325,10 +325,14 @@
     <h1><strong>Limitations</strong></h1>
     <p>Although the network analysis and textual analysis provide valuable insights for the topic,
       the conclusions are somewhat limited by many factors. Considering the network, 
-      the actor who has a high degree may not only due to they participation in many movies, but also could be influenced by thoese movies featuring a large casts.
+      the actor who has a high degree may not only due to they participation in many movies, but also could be influenced by thoese movies featuring a large casts. Another limitation is that the dataset is collected from a single source, which may not be representative of the entire movie industry. Furthermore, budget and revenue data are not accounted for, which could be important factors in determining the ratings of movies.
       While the textual analysis was limited by the shot length of the overviews and the small quantity of samples reviewed, which may affect the generalizability of the findings which may
       generate errors in the results.
-      Therefore, more samples and details might be required to obatin more accurate results in further research.
+      Therefore, more samples and details might be required to obatin more accurate results in further research. This limitation heavily affects the TF-IDF, as the IDF is calculated based on the number of documents, and the number of documents is very low. 
+      Furthermore, the IDF in a way is counterintuitive, as the overviews are very short, and as such a word withholds a lot of information, but the IDF does not take this into account and downweights it if it appears in multiple documents. Funnily enough, the TF's were actually better at providing us with information, as they were able to show us the most common words in each community without the limiting downweights of the IDF. 
+      The WordClouds were arguably the best at answering our research question, as they were able to show us the most common words in each community without the limiting downweights of the IDF. They also mirrored the results of the TF's, but in a more visual way. From those we concluded that the highest rated movies are much more action-packed and include world-affecting events, life and death situations, and so on. The middle-rated movies are similar, but more focus is on superhero elements. 
+      The lowest-rated movies are more about personal stories, and have a lot of romance/drama elements and are more niche. A reason for this could be that the top-rated movies are more appealing to a wider audience, while the bottom-rated movies are more niche and appeal to a smaller audience. Furthermore, smaller stories about personal lives are harder to pull off, as they are more relatable and as such, the audience is more critical of them, while action-packed movies are generally well-recieved,
+      as they follow a more predictable well-known formula of good vs evil.
     </p>
   </div>
 </div>
