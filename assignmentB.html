@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- <title>Bootstrap Website Example</title> -->
+  <!-- <title>AssignmentB</title> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -84,7 +84,7 @@
         <li><a href="#basic-analysis" onclick="showSection('basic-analysis')">Basic Analysis</a></li>
         <li><a href="#network-analysis" onclick="showSection('network-analysis')">Network Analysis</a></li>
         <li><a href="#textual-analysis" onclick="showSection('textual-analysis')">Textual Analysis</a></li>
-        <li><a href="#discussion" onclick="showSection('discussion')">Discussion & Conclusion</a></li>
+        <li><a href="#discussion" onclick="showSection('discussion')">Limitations</a></li>
       </ul>
     </div>
   </div>
@@ -302,19 +302,22 @@
 </div>
 
 <div id="textual-analysis" class="content-section">
-  <h1>Textual Analysis</h1>
-  <p>For the textual analysis part we look at the overviews of the movie dataset. First we extract the communities of movies that share actors, then we sort them based on average average_vote. From here, we do 2 TF-IDF analyses, one where we treat each community as a document, and another where we merge the communities into 3 large ones and treat each of those as a single document. </p>
-  <p>The results of these analysis are shown below:
-  <p>Top 15 TF-IDF words for the top 10 communities of movies based on average vote rate:</p>
-    <img src="tf_idf.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 1000px;height: 280px;">
-  <p>Top 15 TF-IDF words for the 3 merged communities (top-rated, middle-rated and bottom-rated):</p>
-    <img src="tf_idf_merged.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 1000px;height: 100px;">
-  <p>Finally, we made 3 WordCloud representing these 3 large communities. The top-rated community is shown below: </p>
-    <img src="TopComWordCloud.png" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 800px;height: 600px;">
-  <p>The first approach was not very good, as it did not provide us with many words one can extract core concepts from. The reason for this is that using the first approach, 
-    the plain text is limited as each community has few movies, and each movie has a short overview. However, the second approach worked a bit better, where we can see important words for the top and middle brackets such as "love", "power", "clash", "protect", "ultim" and so on... 
-    The bottom bracket is a bit lacking, as the words are too specific and niche, and do not provide much meaning towards the concepts of the movies. The WordClouds however, were arguably the best at answering our research question.  
-  </p>
+  <div class="container">
+    <h1><strong>Textual Analysis</strong></h1>
+    <p>For the textual analysis part we look at the overviews of the movie dataset. First we extract the communities of movies that share actors, then we sort them based on average average_vote. From here, we do 2 TF-IDF analyses, one where we treat each community as a document, and another where we merge the communities into 3 large ones and treat each of those as a single document. </p>
+    <p>The results of these analysis are shown below:
+    <h5><strong>Top 15 TF-IDF words for the top 10 communities of movies based on average vote rate</strong></h5>
+      <img src="https://github.com/LanxiZhang1/project-A/blob/main/tf_idf.PNG?raw=true" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 1000px;height: 280px;">
+    <h5><strong>Top 15 TF-IDF words for the 3 merged communities (top-rated, middle-rated and bottom-rated)</strong></h5>
+      <img src="https://github.com/LanxiZhang1/project-A/blob/main/tf_idf_merged.PNG?raw=true" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 1000px;height: 100px;">
+    <br>
+    <p>Finally, we made 3 WordCloud representing these 3 large communities. The top-rated community is shown below: </p>
+      <img src="https://github.com/LanxiZhang1/project-A/blob/main/TopComWordCloud.PNG?raw=true" alt="Top 200 Popular Movies" class="img-responsive" style = "width: 1000px;height: 600px;">
+    <p>The first approach was not very good, as it did not provide us with many words one can extract core concepts from. The reason for this is that using the first approach, 
+      the plain text is limited as each community has few movies, and each movie has a short overview. However, the second approach worked a bit better, where we can see important words for the top and middle brackets such as "love", "power", "clash", "protect", "ultim" and so on... 
+      The bottom bracket is a bit lacking, as the words are too specific and niche, and do not provide much meaning towards the concepts of the movies. The WordClouds however, were arguably the best at answering our research question.  
+    </p>
+  </div>
 </div>
 
 <div id="discussion" class="content-section">
